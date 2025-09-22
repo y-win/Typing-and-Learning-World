@@ -1,0 +1,156 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  z-index: 1;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #666;
+  margin: 10px 0;
+}
+
+#word {
+  font-size: 2.8em;
+  color: #007BFF;
+  margin: 20px 0;
+}
+
+button {
+  margin: 8px;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  background: #007BFF;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+#phonetic {
+  color: #888;
+  font-style: italic;
+  font-size: 1.1em;
+}
+
+#meaning {
+  font-size: 1.2em;
+  color: #333;
+}
+
+#example-en {
+  font-style: italic;
+  color: #444;
+  margin: 10px 0;
+}
+
+#example-cn {
+  color: #666;
+  font-size: 0.95em;
+}
+
+/* 学习记录面板样式 */
+.record-panel {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  width: 260px;
+  max-height: 60vh;
+  background: rgba(255,255,255,0.85);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  padding: 18px 20px 15px 20px;
+  z-index: 99;
+  overflow-y: auto;
+  backdrop-filter: blur(2px);
+  display: none; /* 初始隐藏 */
+}
+.record-panel.active {
+  display: block; /* 显示时添加active类 */
+}
+.record-panel h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  color: #2575fc;
+  letter-spacing: 2px;
+}
+#record-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+  color: #333;
+}
+#record-list li {
+  padding: 3px 0;
+  border-bottom: 1px solid #eee;
+  word-break: break-all;
+  display: flex;
+  justify-content: space-between;
+}
+#record-list li:last-child {
+  border-bottom: none;
+}
+
+#toggle-record-btn {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  z-index: 100;
+  background: #fff;
+  color: #2575fc;
+  border: 1px solid #2575fc;
+  border-radius: 8px;
+  padding: 7px 15px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+#toggle-record-btn:hover {
+  background: #2575fc;
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .record-panel {
+    position: static;
+    width: 100%;
+    max-height: none;
+    margin-bottom: 14px;
+    box-shadow: none;
+  }
+  #toggle-record-btn {
+    position: static;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  body {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

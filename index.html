@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>📚 智能背单词</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button id="toggle-record-btn" onclick="toggleRecordPanel()">学习记录</button>
+  <div class="record-panel" id="record-panel">
+    <h3>学习记录</h3>
+    <ul id="record-list"></ul>
+  </div>
+  <div class="container">
+    <h1>📚 每日单词</h1>
+    <p>🎯 每天学习一点，进步看得见 ✨</p>
+
+    <div style="margin-bottom: 20px;">
+      <label for="word-bank">词库选择：</label>
+      <select id="word-bank" onchange="switchWordBank()">
+        <option value="cte4">CTE-4</option>
+        <option value="cte6">CTE-6</option>
+        <option value="ielts">IELTS</option>
+        <option value="toefl">TOEFL</option>
+      </select>
+    </div>
+
+    <div id="word-card">
+      <h2 id="word">Loading...</h2>
+      <p><strong>音标：</strong><span id="phonetic">-</span></p>
+      <p style="margin: 15px 0;">
+        <strong>中文释义：</strong>
+        <span id="meaning" style="color: #333; font-weight: bold;"></span>
+      </p>
+      <p><strong>例句：</strong></p>
+      <p id="example-en" style="font-style: italic; color: #555; margin: 10px 0;"></p>
+      <p id="example-cn" style="color: #666; margin: 5px 0;"></p>
+
+      <div>
+        <button onclick="toggleDetails()">显示/隐藏详情</button>
+        <button onclick="speakWord()">🔊 朗读单词</button>
+      </div>
+
+      <br/>
+      <button onclick="prevWord()">⬅️ 上一个单词</button>
+      <button onclick="nextWord()">下一个单词 ➡️</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
